@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Throttle Example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .content {
+            height: 3000px;
+            /* make the page scrollable */
+            background: linear-gradient(to bottom, #89f7fe, #66a6ff);
+        }
+
+        .box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #fff;
+            padding: 10px 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+        }
+        h3{
+            position:sticky;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>When you scroll, the function updateScrollPosition() runs at most once every 3000ms.</h3>
+    <h3>Without throttling, scroll could fire dozens of times per second, slowing the page.</h3>
+
+    <div class="content"></div>
+
+    <div class="box">Scroll position: <span id="pos">0</span>px</div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
