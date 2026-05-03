@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Performance: Debounce & Throttle Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Optimization <span class="accent">Visualizer</span></h1>
+            <p>Interactive demonstration of Debouncing and Throttling techniques in JavaScript.</p>
+        </header>
+
+        <main class="grid-container">
+            <!-- Debounce Section -->
+            <section class="card" id="debounce-section">
+                <div class="card-header">
+                    <h2>Debounce</h2>
+                    <span class="badge">Delayed Execution</span>
+                </div>
+                <p class="description">Wait for a pause. Execution triggers only after <code>delay</code> ms of inactivity.</p>
+                
+                <div class="demo-area">
+                    <div class="input-group">
+                        <label for="debounce-input">Search Simulation</label>
+                        <input type="text" id="debounce-input" placeholder="Type fast to see it in action...">
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="label">Keystrokes</span>
+                            <span id="debounce-raw-count" class="value">0</span>
+                        </div>
+                        <div class="stat accent-blue">
+                            <span class="label">API Calls</span>
+                            <span id="debounce-proc-count" class="value">0</span>
+                        </div>
+                    </div>
+
+                    <div class="log-container">
+                        <h3>Event Log</h3>
+                        <div id="debounce-log" class="log"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Throttle Section -->
+            <section class="card" id="throttle-section">
+                <div class="card-header">
+                    <h2>Throttle</h2>
+                    <span class="badge">Fixed Rate</span>
+                </div>
+                <p class="description">Limit the frequency. Execution triggers at most once every <code>limit</code> ms.</p>
+                
+                <div class="demo-area">
+                    <div class="input-group">
+                        <label>Mouse Movement / Scroll Area</label>
+                        <div id="throttle-area" class="interactive-surface">
+                            Move your mouse here
+                        </div>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="label">Move Events</span>
+                            <span id="throttle-raw-count" class="value">0</span>
+                        </div>
+                        <div class="stat accent-purple">
+                            <span class="label">Updates</span>
+                            <span id="throttle-proc-count" class="value">0</span>
+                        </div>
+                    </div>
+
+                    <div class="log-container">
+                        <h3>Event Log</h3>
+                        <div id="throttle-log" class="log"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Built for Portfolio | Demonstrating Web Performance Optimization</p>
+        </footer>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
